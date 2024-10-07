@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose your Color</h1>
+        <div class="colorPickerBox">
+            <input type="color" class="colorPicker" id="colorPicker">
+            <label for="colorPicker" class="colorLabel">
+                <span class="colorDefault">#FFFFFF</span>
+            </label>
+        </div>
+        <div class="info">Click karo, Gradient color change hoga</div>
+    </div>
+
+
+    <!-- Js -->
+    <script>
+        const colorPicker = document.querySelector(".colorPicker");
+        const colorDefault = document.querySelector(".colorDefault");
+        colorPicker.addEventListener("input", function () {
+            const color = colorPicker.value;
+            colorDefault.textContent = color.toUpperCase();
+            document.body.style.background = `linear-gradient(45deg, ${color}, ${color}50)`
+        })
+    </script>
+</body>
+
+</html>
